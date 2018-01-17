@@ -15,6 +15,7 @@ Azure Network Setup
 Setup VNET with 4 subnet. Public subnet 20.0.0.0/24, Internal subnet 20.0.1.0/24, Sync subnet 20.0.2.0/24, Management subnet 20.0.3.0/24. <br>
 Create one public IP (ClusterPublicIP) and associate it in fgta P1 interface. <br>
 Create UDR(default-udr) and point the default route(0.0.0.0/0) to fgta P2 interface (20.0.1.70). <br>
+Create new resource gourp (fortigate). <br>
 
 
 Fortigate NVA Setup
@@ -35,14 +36,41 @@ Create an Azure Active Directory application
 
 New application registration.<br>
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/AAD.PNG)
+
 Provide a name and URL for the application. Select Web app / API for the type of application you want to create.<br> 
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/AppReg.PNG)
+
 After create the application, write down the application ID and setup the key.<br>
+
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/APPID.PNG)
+
 Create the key for Application and write down.<br>
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/KEY.PNG)
 
 Assign the access control to application
 -----------------------------------------
+Choose the resource group (forigate) and check IAM to assign privilidge.
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/IAM.PNG)
+
+Add application "fotigate" as "network contributor" role 
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/IAM2.PNG)
+
+Fortigate NVA Azure configuration
+-----------------------------------
+In Fortigate configuration, you need to setup "tenant-id", "subscription-id" and "resource-group". Those information you can check it in portal.<br>
+"Client-id" and "Client-secret" is from AAD application Setup.
+"public-nic", "public-ip", "route-table", "route" and "next-hop" is from Azure setup.
+```
+config system azure
+    set tenant-id "942b80cd-1b14-42a1-8dcf-4b21dece61ba"
+    set subscription-id "2f96c44c-cfb2-4621-bd36-65ba45185e0c"
+    set resource-group "fortigate"
+    set client-id "14dbd5c5-307e-4ea4-8133-68738141feb1"
+    set client-secret 
+    set public-nic "fgtaport1"
+    set public-ip "ClusterPublicIP"
+    set route-table "default-udr"
+    set route "defaultroute"
+    set next-hop "20.0.1.70"
+
+```
