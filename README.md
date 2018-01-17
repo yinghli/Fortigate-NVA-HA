@@ -16,7 +16,7 @@ We will use 4 NIC virtual machine. One NIC is for public interface, one NIC is f
 Parameters            | Active NVA    | Passive NVA
 ----------------------| ------------- | ------------
 Fortigate NVA         | fgta          | fgtb
-Public NIC            | 20.0.0.70/24  | 20.0.0.80/24
-Internal NIC          | 20.0.1.70/24  | 20.0.1.80/24
-Sync NIC              | 20.0.2.70/24  | 20.0.2.80/24
-Management NIC        | 20.0.3.70/24  | 20.0.3.80/24
+Public NIC     (P1)   | 20.0.0.70/24  | 20.0.0.80/24
+Internal NIC   (P2)   | 20.0.1.70/24  | 20.0.1.80/24
+Sync NIC       (P3)   | 20.0.2.70/24  | 20.0.2.80/24
+Management NIC (P4)   | 20.0.3.70/24  | 20.0.3.80/24
