@@ -32,3 +32,9 @@ Management NIC (P4)   | 20.0.3.70/24  | 20.0.3.80/24
 
 Create an Azure Active Directory application and service principal
 ---------------------------------
+## Create an Azure Active Directory application
+New application registration.<br>
+![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/AAD.PNG)
+Provide a name and URL for the application. Select Web app / API for the type of application you want to create.<br> 
+![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/AppReg.PNG)
+![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/APPID.PNG)
