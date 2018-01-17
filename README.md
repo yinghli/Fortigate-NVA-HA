@@ -72,5 +72,9 @@ config system azure
     set route-table "default-udr"
     set route "defaultroute"
     set next-hop "20.0.1.70"
-
 ```
+
+Failover Testing
+-------------------------------
+Shutdown the active NVA, you can check that Passive NVA call the application API and modity the UDR and associate cluster IP to passive interface.  
+![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/Drawing2.png)
