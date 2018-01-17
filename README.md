@@ -7,15 +7,16 @@ Overall design is that customer deploy 2 Fortigate firewall NVA, those two devic
 
 Topology
 -------------------------------------
-
+![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/Drawing1.png)
 
 Fortigate Setup
 -------------------------------------
 We will use 4 NIC virtual machine. One NIC is for public interface, one NIC is for internal interface, one NIC is for session sync interface and one NIC is for out of band management interface.
 
-Parameters            | Values
-----------------------| -------------
-Public                | 20.0.0.0/24
-Internal              | 20.0.1.0/24 
-Sync                  | 20.0.2.0/24 
-Management            | 20.0.3.0/24 
+Parameters            | Active NVA    | Passive NVA
+----------------------| ------------- | ------------
+Fortigate NVA         | fgta          | fgtb
+Public NIC            | 20.0.0.70/24  | 20.0.0.80/24
+Internal NIC          | 20.0.1.70/24  | 20.0.1.80/24
+Sync NIC              | 20.0.2.70/24  | 20.0.2.80/24
+Management NIC        | 20.0.3.70/24  | 20.0.3.80/24
