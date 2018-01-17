@@ -37,4 +37,7 @@ New application registration.<br>
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/AAD.PNG)
 Provide a name and URL for the application. Select Web app / API for the type of application you want to create.<br> 
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/AppReg.PNG)
+After create the application, write down the application ID and setup the key.
 ![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/APPID.PNG)
+Create the key for Application and write down.
+![](https://github.com/yinghli/Fortigate-NVA-HA/blob/master/KEY.PNG)
